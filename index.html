@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamificación</title>
+    <style>
+        /* Estilo global */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #004aad;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 15px 20px;
+            font-size: 18px;
+        }
+        header img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        /* Fondo de pantalla */
+        .background {
+            height: calc(100vh - 70px); /* Altura de la pantalla menos el encabezado */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            padding: 10px;
+        }
+
+        /* Botón */
+        .button {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 22px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff6347;
+        }
+
+        /* Animación de botones */
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        /* Cuadros de curso */
+        .course {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .course div {
+            background-color: #004aad;
+            padding: 40px;
+            border-radius: 10px;
+            width: 250px;
+            cursor: pointer;
+            font-size: 22px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .course div:hover {
+            background-color: #0055c2;
+        }
+
+        /* Caja de texto y botón del juego */
+        .game-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .game-option img {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        /* Interfaz de juegos - Horizontal */
+        .game-options-horizontal {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+
+        /* Títulos grandes */
+        h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <img src="uemej.png" alt="Logo" id="logo">
+        <h1>Unidad Educativa Monseñor Enrique julhes</h1>
+    </header>
+
+    <!-- Primera interfaz -->
+    <div class="background" id="pantalla1" style="background-image: url('nose.jpg');">
+      
+
+        <button class="button" onclick="mostrarPantalla('pantalla2')">JUGAR</button>
+    </div>
+
+    <!-- Segunda interfaz -->
+    <div class="background" id="pantalla2" style="display: none; background-image: url('FONDO2.jpg');">
+        <h2>SELECCIONA EL CURSO</h2>
+        <div class="course">
+            <div onclick="mostrarPantalla('pantalla1B')">1ero Bachillerato</div>
+            <div onclick="mostrarPantalla('pantalla2B')">2do Bachillerato</div>
+            <div onclick="mostrarPantalla('pantalla3B')">3ro Bachillerato</div>
+        </div>
+        <button class="button back-button" onclick="mostrarPantalla('pantalla1')">REGRESAR</button>
+    </div>
+
+    <!-- Interfaz de 1ero Bachillerato -->
+    <div class="background" id="pantalla1B" style="display: none; background-image: url('FONDO3.jpg');">
+        <h2>SELECCIONA UN JUEGO</h2>
+        <div class="game-options-horizontal">
+            <div class="game-option">
+                <p>Juego 1</p>
+                <img src="sistemasch.png" onclick="window.open('https://cafe.blooket.com/play/register', '_blank')" alt="Juego 1">
+            </div>
+            <div class="game-option">
+                <p>Juego 2</p>
+                <img src="oseo.png" onclick="window.open('https://poki.com/es', '_blank')" alt="Juego 2">
+            </div>
+            <div class="game-option">
+                <p>Juego 3</p>
+                <img src="muscular.png" onclick="window.open('https://www.1001juegos.com', '_blank')" alt="Juego 3">
+            </div>
+        </div>
+        <button class="button back-button" onclick="mostrarPantalla('pantalla2')">REGRESAR</button>
+    </div>
+
+    <!-- Interfaz de 2do Bachillerato -->
+    <div class="background" id="pantalla2B" style="display: none; background-image: url('FONDO4.jpg');">
+        <h2>SELECCIONA UN JUEGO</h2>
+        <div class="game-options-horizontal">
+            <div class="game-option">
+                <p>Juego 1</p>
+                <img src="xd.jpg" onclick="window.open('https://learningapps.org/watch?v=p5a11bxoc24', '_blank')" alt="Juego 4">
+            </div>
+            <div class="game-option">
+                <p>Juego 2</p>
+                <img src="cerebro.jpg" onclick="window.open('https://www.1001juegos.com', '_blank')" alt="Juego 5">
+            </div>
+            <div class="game-option">
+                <p>Juego 3</p>
+                <img src="corazón.jpg" onclick="window.open('https://www.friv.com', '_blank')" alt="Juego 6">
+            </div>
+        </div>
+        <button class="button back-button" onclick="mostrarPantalla('pantalla2')">REGRESAR</button>
+    </div>
+
+    <!-- Interfaz de 3ro Bachillerato -->
+    <div class="background" id="pantalla3B" style="display: none; background-image: url('FONDO5.jpg');">
+        <h2>SELECCIONA UN JUEGO</h2>
+        <div class="game-options-horizontal">
+            <div class="game-option">
+                <p>Juego 1</p>
+                <img src="bulimia.jpg" onclick="window.open('https://www.minijuegos.com', '_blank')" alt="Juego 7">
+            </div>
+            <div class="game-option">
+                <p>Juego 2</p>
+                <img src="anorexia.jpg" onclick="window.open('https://www.friv.com', '_blank')" alt="Juego 8">
+            </div>
+            <div class="game-option">
+                <p>Juego 3</p>
+                <img src="metodos.jpg" onclick="window.open('https://www.1001juegos.com', '_blank')" alt="Juego 9">
+            </div>
+        </div>
+        <button class="button back-button" onclick="mostrarPantalla('pantalla2')">REGRESAR</button>
+    </div>
+
+    <script>
+        function mostrarPantalla(id) {
+            // Ocultar todas las pantallas
+            const pantallas = document.querySelectorAll('.background');
+            pantallas.forEach(pantalla => pantalla.style.display = 'none');
+
+            // Mostrar la pantalla seleccionada
+            document.getElementById(id).style.display = 'flex';
+        }
+    </script>
